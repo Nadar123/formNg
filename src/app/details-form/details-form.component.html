@@ -1,0 +1,130 @@
+
+
+    <div  dir="rtl" class="container">
+        <div class="header">
+            <a class="icon" href="#"><i class="fa fa-phone" arial-hidden="true"></i> </a>
+            <a href="#"> <i class="fa fa-envelope" arial-hidden="true"></i></a>
+        </div><br>
+        <div style="text-align:right">
+            <span class="green"></span>
+           <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+          <h6 dir="rtl"> השדות המסומנים בכוכבית הם שדות חובה </h6>
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <h2 dir="rtl">  בוקר טוב, </h2>
+        <h4 dir="rtl">אנא הזן את שמך הפרטי*</h4>
+        <div  class="wrapper" dir="rtl">
+          <input #firstName="ngModel"
+                  class="input"
+                  [(ngModel)]="userDetails.firstName"
+                  type="text"  id="first-name"
+                  placeholder=" *שם פרטי"
+                  name="firstName" dir="rtl"
+                  id="text"  required>
+                  <span class="underline"></span>
+            <div class="alert" *ngIf="firstName.touched && firstName.invalid">
+              <div dir="rtl" *ngIf="firstName.errors.required">נא להזין שם פרטי</div>
+            </div>
+        </div>
+        <div class="wrapper" dir="rtl">
+          <input #lastName="ngModel"
+                  class="input"
+                  [(ngModel)]="userDetails.lastName"
+                  name="lastName"
+                  dir="rtl"
+                  type="text"
+                  id="last-name"
+                  placeholder= "*שם משפחה"
+                  required>
+                  <span class="underline"></span>
+            <div class="alert" *ngIf="lastName.touched && lastName.invalid">
+              <div class="alert" dir="rtl" *ngIf="lastName.errors.required">נא להזין שם משפחה </div>
+            </div>
+        </div>
+        <div  class="wrapper"  dir="rtl">
+          <input #phone="ngModel"
+                 class="input"
+                 [(ngModel)]="userDetails.phone"
+                 name="phone"
+                 dir="rtl"
+                 type="text"
+                 id="tel"
+                 placeholder= "*טלפון נייד"
+                 required minlength="8"
+                 pattern="^\s*(?:\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?\s*$">
+                <span class="underline"></span>
+            <div class="alert" *ngIf="phone.touched && phone.invalid">
+                <div dir="rtl" *ngIf="phone.errors.required">נא להזין מספר טלפון</div>
+                <div dir="rtl" *ngIf="phone.errors.minlength"> נא להזין מספר טלפון תיקני בעל 8 ספרות</div>
+                <div dir="rtl" *ngIf="phone.errors.pattern"> נא להזין מסםר חוקי </div>
+            </div>
+        </div>
+        <div  class="wrapper" dir="rtl">
+            <input #email="ngModel"
+                class="input"
+                [(ngModel)]="userDetails.email"
+                name="email"
+                dir="rtl"
+                type="email"
+                id="email"
+                placeholder= " *כתובת מייל "
+                required email>
+                <span class="underline"></span>
+            <div class="alert" *ngIf="email.touched && email.invalid">
+                <div dir="rtl" *ngIf="email.errors.required">נא להזין את כתובת מייל </div>
+                <div dir="rtl" *ngIf="email.errors.email">  נא להזין את כתובת מייל תיקנית </div>
+            </div>
+        </div>
+        <div  class="wrapper" dir="rtl">
+            <input #address="ngModel"
+                class="input"
+                [(ngModel)]="userDetails. address"
+                name=" address"
+                dir="rtl"
+                type=" address"
+                id=" address"
+                placeholder= "  כתובת מגורים למשלוח דואר  "
+                required>
+                <span class="underline"></span>
+                <div class="alert" *ngIf="address.touched && address.invalid">
+                  <div dir="rtl" *ngIf="address.errors.required"> נא להזין כתובת מגורים </div>
+                </div>
+        </div>
+        <div class="wrapper"dir="rtl">
+            <input
+              #fromDate="ngModel"
+              class="input"
+              dir="rtl"
+              [(ngModel)]="userDetails.fromDate"
+              name="lastName"
+              name="fromDate"
+              type="date"
+              id="fromDate"
+              required>
+              <span class="underline"></span>
+            <div class="alert" *ngIf="fromDate.touched && fromDate.invalid">
+                <div dir="rtl" *ngIf="fromDate.errors.required">*נא להזין תאריך התחלה  .</div>
+            </div>
+        </div>
+        <div class="wrapper" dir="rtl">
+            <input
+              #toDate="ngModel"
+              class="input"
+              dir="rtl"
+              [(ngModel)]="userDetails.toDate"
+              name="toDate"
+              type="date"
+              id="toDate"
+              required>
+              <span class="underline"></span>
+            <div class="alert" *ngIf="toDate.touched && toDate.invalid">
+                <div dir="rtl" *ngIf="toDate.errors.required">*נא להזין תאריך סיום.</div>
+            </div>
+        </div>
+        <input type="submit" class="button" value="המשך" [disabled]="!f.valid">
+    </form>
+
+
+
+

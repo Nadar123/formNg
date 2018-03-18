@@ -1,0 +1,142 @@
+
+ .container{
+    background-color: white;
+    font-family:  "Helvetica Neue", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgba(0,0,0, 0.2);
+    max-width: 400px;
+    margin-top: 5em;
+    padding: 1em;
+    box-shadow: 0 3px 4px #ccc;
+
+}
+/*fa fa icons*/
+.icon{
+ cursor: pointer;
+}
+.fa{
+ color: rgba(0,0,0, .5);
+ padding: 0.5em;
+}
+.fa:hover{
+  cursor: pointer;
+  color: rgba(0,0,0, .9);
+  }
+/*dot*/
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.green{
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: darkgray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.dot:hover{
+ background-color: #0088cc;
+ cursor: pointer;
+}
+h6{
+  color: grey;
+}
+/**
+ * Form Styles
+ */
+ h2{
+  color: dodgerblue;
+  font-size: 2em;
+  font-weight: 300;
+
+  display: inline;
+
+}
+h4{
+  color: dodgerblue;
+  margin-top: 7px;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  box-sizing: content-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height: 1.7em;
+  box-shadow: none;
+  position: relative;
+  width: 90%;
+}
+.input:hover {
+  border-bottom:2px solid orange;
+  transition: all 0.5s linear;
+}
+input::-webkit-input-placeholder {
+  color: #AAA;
+  font-size: 0.7em;
+}
+input,
+select {
+    display: inline-block;
+    background-color: #AAA;
+    font-size: 1em;
+    margin-bottom: 1em;
+    padding: 0.25em 0.5em;
+    width: 90%;
+}
+
+.button {
+    background-color: orange;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+    padding: 0.5em 0.6em;
+    width: 6em;
+    margin-top: 1em;
+
+}
+input .button{
+  border: 2px solod black;
+
+}
+.button:active,
+.button:focus,
+.button:hover {
+    color: rgba(0,0,0, .6);
+    cursor: pointer;
+}
+
+
+/*validation*/
+.alert{
+  color: lightcoral;
+  font-size: 0.9em;
+  margin-top:-1em;
+
+
+}
+
+
+
+
+
+
+

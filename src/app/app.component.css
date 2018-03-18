@@ -1,0 +1,22 @@
+/*body {
+  margin-left: 10em;
+  font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+  color:gray;
+  padding: 50px 0;
+  max-width: 580px;
+  max-height: 600px;
+
+}*/
+body {
+  background-color: #F1F1F1;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  max-width: 500px;
+  max-height: 900px;
+  margin-top: 10em;
+}
+
+

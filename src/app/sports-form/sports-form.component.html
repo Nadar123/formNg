@@ -1,0 +1,60 @@
+
+
+ <div  dir="rtl" class="container">
+    <div class="header">
+      <a class="icon" href="#"><i class="fa fa-phone" arial-hidden="true"></i> </a>
+      <a href="#"> <i class="fa fa-envelope" arial-hidden="true"></i></a>
+    </div>
+      <div style="text-align:right">
+        <span class="dot"></span>
+        <span class="green"></span>
+        <span class="dot"></span>
+      </div>
+      <h6 dir="rtl"> השדות המסומנים בכוכבית הם שדות חובה</h6>
+       <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <h4> בחר את הספורט האהוב עלייך*</h4>
+         <p dir="rtl" >
+          <input dir="rtl"
+          [(ngModel)]="sportDetails.sport"
+          name="sport" value="basketball"
+          name="group1"
+          type="radio"
+          id="test1" />
+          <label dir="rtl"  for="test1">כדורסל</label>
+        </p>
+        <p dir="rtl" >
+        <input dir="rtl"
+          [(ngModel)]="sportDetails.sport"
+          name="sport"
+          value="football"
+          name="group1"
+          type="radio"
+          id="test2" />
+         <label dir="rtl"  for="test2">כדורגל</label>
+      </p>
+          <br> <br>
+      <select
+        class="browser-default select-style"
+        [(ngModel)]="sportDetails.roll"
+        name="roll"
+        *ngIf="sportDetails.sport == 'football'">
+          <option value="" >Choose your option</option>
+          <option>בלם</option>
+          <option >קשר</option>
+          <option>שוער</option>
+      </select>
+
+      <select
+        class="browser-default select-style"
+        [(ngModel)]="sportDetails.roll"
+        name="roll"
+        *ngIf="sportDetails.sport == 'basketball'">
+          <option value="" >Choose your option</option>
+          <option>סנטר</option>
+          <option>רכז</option>
+          <option>פוינט-גראד</option>
+      </select>
+          <br>
+      <button dir="rtl" type="submit" class="button" [disabled]="!f.valid">הבא</button>
+    </form>
+</div>
