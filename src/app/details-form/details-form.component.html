@@ -13,13 +13,13 @@
           <h6 dir="rtl"> השדות המסומנים בכוכבית הם שדות חובה </h6>
         <form #f="ngForm" (ngSubmit)="onSubmit()">
         <h2 dir="rtl">  בוקר טוב, </h2>
-        <h4 dir="rtl">אנא הזן את שמך הפרטי*</h4>
+        <h4 dir="rtl">אנא הזן את שמך הפרטי *</h4>
         <div  class="wrapper" dir="rtl">
           <input #firstName="ngModel"
                   class="input"
                   [(ngModel)]="userDetails.firstName"
                   type="text"  id="first-name"
-                  placeholder=" *שם פרטי"
+                  placeholder=" * שם פרטי"
                   name="firstName" dir="rtl"
                   id="text"  required>
                   <span class="underline"></span>
@@ -35,7 +35,7 @@
                   dir="rtl"
                   type="text"
                   id="last-name"
-                  placeholder= "*שם משפחה"
+                  placeholder= "* שם משפחה"
                   required>
                   <span class="underline"></span>
             <div class="alert" *ngIf="lastName.touched && lastName.invalid">
@@ -50,7 +50,7 @@
                  dir="rtl"
                  type="text"
                  id="tel"
-                 placeholder= "*טלפון נייד"
+                 placeholder= "* טלפון נייד"
                  required minlength="8"
                  pattern="^\s*(?:\+?(\d{1,3}))?[- (]*(\d{3})[- )]*(\d{3})[- ]*(\d{4})(?: *[x/#]{1}(\d+))?\s*$">
                 <span class="underline"></span>
@@ -68,7 +68,7 @@
                 dir="rtl"
                 type="email"
                 id="email"
-                placeholder= " *כתובת מייל "
+                placeholder=  "* כתובת מייל"
                 required email>
                 <span class="underline"></span>
             <div class="alert" *ngIf="email.touched && email.invalid">
@@ -84,18 +84,18 @@
                 dir="rtl"
                 type=" address"
                 id=" address"
-                placeholder= "  כתובת מגורים למשלוח דואר  "
+                placeholder= "* כתובת מגורים למשלוח דואר"
                 required>
                 <span class="underline"></span>
                 <div class="alert" *ngIf="address.touched && address.invalid">
                   <div dir="rtl" *ngIf="address.errors.required"> נא להזין כתובת מגורים </div>
                 </div>
         </div>
-        <div class="wrapper"dir="rtl">
+        <div class="wrapper">
+          <label dir="rtl">  * תאריך התחלה  </label>
             <input
               #fromDate="ngModel"
-              class="input"
-              dir="rtl"
+              class="input date"
               [(ngModel)]="userDetails.fromDate"
               name="lastName"
               name="fromDate"
@@ -104,14 +104,15 @@
               required>
               <span class="underline"></span>
             <div class="alert" *ngIf="fromDate.touched && fromDate.invalid">
-                <div dir="rtl" *ngIf="fromDate.errors.required">*נא להזין תאריך התחלה  .</div>
+                <div dir="rtl" *ngIf="fromDate.errors.required">*נא להזין תאריך התחלה.</div>
             </div>
         </div>
-        <div class="wrapper" dir="rtl">
+        <div class="wrapper" >
+            <label > ;* תאריך סיום  &nbsp; &nbsp; &nbsp;</label>
             <input
+              placeholder="Date"
               #toDate="ngModel"
-              class="input"
-              dir="rtl"
+              class="input date date1"
               [(ngModel)]="userDetails.toDate"
               name="toDate"
               type="date"
@@ -119,7 +120,7 @@
               required>
               <span class="underline"></span>
             <div class="alert" *ngIf="toDate.touched && toDate.invalid">
-                <div dir="rtl" *ngIf="toDate.errors.required">*נא להזין תאריך סיום.</div>
+                <div dir="rtl" *ngIf="toDate.errors.required">* נא להזין תאריך סיום.</div>
             </div>
         </div>
         <input type="submit" class="button" value="המשך" [disabled]="!f.valid">

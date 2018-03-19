@@ -12,6 +12,7 @@ import { EmailValidator } from '@angular/forms';
   styleUrls: ['./details-form.component.css']
 })
 export class DetailsFormComponent implements OnInit {
+  // set initial state
   userDetails = {
     firstName: '',
     lastName: '',
@@ -26,6 +27,7 @@ export class DetailsFormComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    // geting the data from local storage if exists
    const localS = localStorage.getItem('userDetails');
    if (localS) {
      this.userDetails = JSON.parse(localS);
@@ -33,6 +35,7 @@ export class DetailsFormComponent implements OnInit {
   }
 
   onSubmit () {
+    // saving the data in local storage
     localStorage.setItem('userDetails', JSON.stringify(this.userDetails));
     this.router.navigate(['/sport']);
   }

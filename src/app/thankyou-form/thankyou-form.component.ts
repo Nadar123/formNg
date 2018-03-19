@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-thankyou-form',
   templateUrl: './thankyou-form.component.html',
   styleUrls: ['./thankyou-form.component.css']
 })
-export class ThankyouFormComponent implements OnInit {
-
+export class ThankyouFormComponent {
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }

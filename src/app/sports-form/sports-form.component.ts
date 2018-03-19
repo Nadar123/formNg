@@ -12,6 +12,7 @@ import { EmailValidator } from '@angular/forms';
   styleUrls: ['./sports-form.component.css']
 })
 export class SportsFormComponent implements OnInit {
+   // set initial state
   sportDetails = {
     sport: '',
     roll: ''
@@ -21,6 +22,7 @@ export class SportsFormComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+   // geting the data from local storage if exists
     const localSport = localStorage.getItem('sportDetails');
     if (localSport) {
       this.sportDetails = JSON.parse(localSport);
@@ -28,7 +30,10 @@ export class SportsFormComponent implements OnInit {
   }
 
   onSubmit () {
-    localStorage.setItem('sportDetails', JSON.stringify(this.sportDetails));
-    this.router.navigate(['/thankyou']);
+     // saving the data in local storage
+    if ( this.sportDetails.roll != null && this.sportDetails.roll !== '' ) {
+      localStorage.setItem('sportDetails', JSON.stringify(this.sportDetails));
+      this.router.navigate(['/thankyou']);
+    }
   }
 }
